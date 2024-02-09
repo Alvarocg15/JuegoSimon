@@ -1,0 +1,145 @@
+body{
+    background-color: bisque;
+    display: flex;
+}
+
+aside{
+    /* background-color: aqua; */
+    width: 20%;
+    height: 100vh;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: blueviolet; */
+    width: 80%;
+}
+
+.container{
+    /* position: relative; */
+    background-color: black;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.puntuaciones{
+    border-collapse: collapse;
+    border: 1px solid black;
+    th,tr,td{
+        border-collapse: collapse;
+        border: 3px solid black;
+        text-align: center;
+        padding: 5px;
+    }
+    th{
+        background-color: aqua;
+    }
+    tr{
+        background-color: chartreuse;
+    }
+}
+
+
+/* AQUI ESTÁ LA SECCION DE LOS BOTONES CON SU HOVER */
+
+
+.boton-izq-sup{
+    display: inline-block;
+    height: 300px;
+    width: 300px;
+    border-top-left-radius: 100%;
+    border-bottom-right-radius:-25%;
+    background-color: green;
+    border: 5px solid black;
+    cursor: pointer;
+}
+
+.boton-izq-sup:hover{
+    background-color: #44D62C;
+    box-shadow: inset 0px 0px 0px 3px cyan;
+}
+
+.boton-dcha-sup{
+    display: inline-block;
+    height: 300px;
+    width: 300px;
+    border-top-right-radius: 100%;
+    background-color: rgba(255, 0, 0, 0.818);
+    border: 5px solid black;
+    cursor: pointer;
+}
+
+.boton-dcha-sup:hover{
+    background-color: #ff0000;
+    box-shadow: inset 0px 0px 0px 3px cyan;
+}
+
+.boton-izq-inf{
+    display: inline-block;
+    height: 300px;
+    width: 300px;
+    border-bottom-left-radius: 100%;
+    background-color: #e6da32d9;
+    border: 5px solid black;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.boton-izq-inf:hover{
+    background-color: #FFF01F;
+    box-shadow: inset 0px 0px 0px 3px cyan;
+}
+
+.boton-dcha-inf{
+    display: inline-block;
+    height: 300px;
+    width: 300px;
+    border-bottom-right-radius: 100%;
+    background-color: rgba(0, 0, 255, 0.794);
+    border: 5px solid black;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.boton-dcha-inf:hover{
+    background-color: #4d59ff;
+    box-shadow: inset 0px 0px 0px 3px cyan;
+}
+
+.boton-central{
+    display: inline-block;
+    position: absolute;
+    top: 35%;
+    left: 51%;
+    height: 250px;
+    width: 250px;
+    border-radius: 100%;
+    background-color: grey;
+    color: white;
+    border: 10px solid black;
+    cursor: pointer;
+}
+
+/* AQUI ESTÁ LA SECCION DE LOS BOTONES CUANDO SE ACTIVAN */
+
+.activoVerde{
+    background-color: #44D62C;
+    box-shadow: inset 0px 0px 0px 3px cyan;
+}
+
+.activoRojo{
+    background-color: #ff0000;
+    box-shadow: inset 0px 0px 0px 3px cyan;
+}
+
+.activoAmarillo{
+    background-color: #FFF01F;
+    box-shadow: inset 0px 0px 0px 3px cyan;
+}
+
+.activoAzul{
+    background-color: #4d59ff;
+    box-shadow: inset 0px 0px 0px 3px cyan;
+}
