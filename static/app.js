@@ -11,7 +11,7 @@ const getBotonAleatorio = () => {
         botonAmarillo,
         botonAzul
     ];
-    return botones[parseInt(Math.random() * 3)];
+    return botones[parseInt(Math.random() * botones.length)];
 }
 
 const secuencia = [
@@ -19,38 +19,37 @@ const secuencia = [
 ];
 let secuenciaAAdivinar = [...secuencia];
 
-const flash = (boton) => {
-    return new Promise((resolve, reject) => {
-        console.log(boton);
-        if (boton == botonVerde) {
+const flash = boton => {
+    return new Promise((resolve) => {
+        if (boton === botonVerde) {
             boton.className += 'activoVerde';
-        } else if (boton == botonRojo) {
+        } else if (boton === botonRojo) {
             boton.className += 'activoRojo';
-        } else if (boton == botonAmarillo) {
+        } else if (boton === botonAmarillo) {
             boton.className += 'activoAmarillo';
-        } else if (boton == botonAzul) {
+        } else if (boton === botonAzul) {
             boton.className += 'activoAzul';
         } else {
             console.log('Algo ha fallado en la activación del botón');
         }
 
         setTimeout(() => {
-            if (boton == botonVerde) {
+            if (boton === botonVerde) {
                 boton.className = boton.className.replace(
                     'activoVerde',
                     ''
                 );
-            } else if (boton == botonRojo) {
+            } else if (boton === botonRojo) {
                 boton.className = boton.className.replace(
                     'activoRojo',
                     ''
                 );
-            } else if (boton == botonAmarillo) {
+            } else if (boton === botonAmarillo) {
                 boton.className = boton.className.replace(
                     'activoAmarillo',
                     ''
                 );
-            } else if (boton == botonAzul) {
+            } else if (boton === botonAzul) {
                 boton.className = boton.className.replace(
                     'activoAzul',
                     ''
@@ -66,16 +65,33 @@ const flash = (boton) => {
 };
 
 let juega = false;
-const botonPulsado= () => {
+let marcador = 0;
+const botonPulsado = botonPulsado => {
     if(!juega) return;
-    
-}
+    const botonAAdivinar = secuenciaAAdivinar.shift();
+    if (botonAAdivinar === botonPulsado) {
+        if (secuenciaAAdivinar.length === 0){
+            secuencia.push(getBotonAleatorio());
+            secuenciaAAdivinar = [...secuencia];
+            setTimeout(() =>{
+                empiezaRonda();
+            },1000);
+            marcador++;
+        } 
+    } else {
+        alert('¡¡¡Has Perdido!!! \nTu resultado ha sido:'+ marcador);
+        // secuencia.length = 0;
+    }
+};
  
-const main = async () => {
+const empiezaRonda = async () => {
+    juega = false;
     for (const boton of secuencia) {
         await flash(boton);
     }
     juega = true;
 };
 
-main();
+const empiezaJuego = async () => {
+    empiezaRonda();
+}
