@@ -3,12 +3,21 @@ const botonRojo = document.querySelector('.boton-dcha-sup');
 const botonAmarillo = document.querySelector('.boton-izq-inf');
 const botonAzul = document.querySelector('.boton-dcha-inf');
 
+
+const getBotonAleatorio = () => {
+    const botones = [
+        botonVerde,
+        botonRojo,
+        botonAmarillo,
+        botonAzul
+    ];
+    return botones[parseInt(Math.random() * 3)];
+}
+
 const secuencia = [
-    botonVerde,
-    botonRojo,
-    botonAmarillo,
-    botonAzul
+    getBotonAleatorio()
 ];
+let secuenciaAAdivinar = [...secuencia];
 
 const flash = (boton) => {
     return new Promise((resolve, reject) => {
@@ -49,15 +58,24 @@ const flash = (boton) => {
             } else {
                 console.log('Algo ha fallado en la desactivación del botón');
             }
-            resolve();
+            setTimeout(() => {
+                resolve();
+            },250);
         }, 1000);
     });
 };
 
+let juega = false;
+const botonPulsado= () => {
+    if(!juega) return;
+    
+}
+ 
 const main = async () => {
     for (const boton of secuencia) {
         await flash(boton);
     }
+    juega = true;
 };
 
 main();
