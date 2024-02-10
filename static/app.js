@@ -3,9 +3,12 @@ const botonRojo = document.querySelector('.boton-dcha-sup');
 const botonAmarillo = document.querySelector('.boton-izq-inf');
 const botonAzul = document.querySelector('.boton-dcha-inf');
 const tablaPuntuacion = document.getElementById('modalPuntuaciones');
+const puntuaciones = document.querySelector('.puntuaciones')
 
 var select = document.getElementById('dificultad');
 var velocidad;
+
+var registro = {};
 
 select.addEventListener('change',
   function(){
@@ -151,8 +154,11 @@ const botonPulsado = botonPulsado => {
                 nombre = "";
             } else {
                 nombre = nombre.toUpperCase();
+                registro+={name: nombre, puntos: marcador};
+                guardarDatosLocal(nombre,marcador);
                 abrirPuntuaciones();
                 console.log(nombre);
+                localStorage.getItem('registro');
             }
         }while (nombre.length!=3);
         
@@ -188,4 +194,31 @@ window.onclick = function(event) {
     if (event.target == tablaPuntuacion) {
         tablaPuntuacion.style.display = "none";
     }
-  }
+}
+
+const guardarDatosLocal = (iniciales, puntos) => {
+    let datosGuardados = JSON.parse(localStorage.getItem('datos')) || [];
+    datosGuardados.push({ iniciales, puntos});
+    localStorage.setItem('datos', JSON.stringify(datosGuardados));
+    actualizarTablas();
+}
+
+const actualizarTablas = () => {
+    
+    let cuerpoTabla = puntuaciones.getElementsByTagName('tbody')[0];
+    cuerpoTabla.innerHTML = '';
+    let datosGuardados = JSON.parse(localStorage.getItem('datos')) || [];
+    datosGuardados.sort((a, b) => b.puntos - a.puntos);
+
+    datosGuardados.forEach((dato) => {
+        let fila = cuerpoTabla.insertRow();
+        let celdaIniciales = fila.insertCell(0);
+        let celdaPuntos = fila.insertCell(1);
+
+        celdaIniciales.innerHTML = dato.iniciales;
+        celdaPuntos.innerHTML = dato.puntos;
+    });
+}
+window.onload = function () {
+    actualizarTablas();
+};
