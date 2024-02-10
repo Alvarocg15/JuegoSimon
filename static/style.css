@@ -57,7 +57,7 @@ main{
 }
 
 
-/* AQUI ESTÁ LA SECCION DE LOS BOTONES CON SU HOVER */
+/* AQUI ESTÁ LA SECCION DE LOS BOTONES */
 
 
 .boton-izq-sup{
@@ -71,10 +71,6 @@ main{
     cursor: pointer;
 }
 
-.boton-izq-sup:hover{
-    background-color: #44D62C;
-    box-shadow: inset 0px 0px 0px 3px cyan;
-}
 
 .boton-dcha-sup{
     display: inline-block;
@@ -86,10 +82,6 @@ main{
     cursor: pointer;
 }
 
-.boton-dcha-sup:hover{
-    background-color: #ff0000;
-    box-shadow: inset 0px 0px 0px 3px cyan;
-}
 
 .boton-izq-inf{
     display: inline-block;
@@ -102,10 +94,6 @@ main{
     cursor: pointer;
 }
 
-.boton-izq-inf:hover{
-    background-color: #FFF01F;
-    box-shadow: inset 0px 0px 0px 3px cyan;
-}
 
 .boton-dcha-inf{
     display: inline-block;
@@ -118,10 +106,6 @@ main{
     cursor: pointer;
 }
 
-.boton-dcha-inf:hover{
-    background-color: #4d59ff;
-    box-shadow: inset 0px 0px 0px 3px cyan;
-}
 
 .boton-central{
     display: inline-block;

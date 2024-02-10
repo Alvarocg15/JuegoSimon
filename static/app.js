@@ -32,12 +32,20 @@ const flash = boton => {
     return new Promise((resolve) => {
         if (boton === botonVerde) {
             boton.className += 'activoVerde';
+            let audio = document.getElementById('audioVerde');
+            audio.play();
         } else if (boton === botonRojo) {
             boton.className += 'activoRojo';
+            let audio = document.getElementById('audioRojo');
+            audio.play();
         } else if (boton === botonAmarillo) {
             boton.className += 'activoAmarillo';
+            let audio = document.getElementById('audioAmarillo');
+            audio.play();
         } else if (boton === botonAzul) {
             boton.className += 'activoAzul';
+            let audio = document.getElementById('audioAzul');
+            audio.play();
         } else {
             console.log('Algo ha fallado en la activación del botón');
         }
@@ -77,6 +85,52 @@ let juega = false;
 let marcador = 0;
 const botonPulsado = botonPulsado => {
     if(!juega) return;
+    if (botonPulsado === botonVerde) {
+        botonPulsado.className += 'activoVerde';
+        let audio = document.getElementById('audioVerde');
+        audio.play();
+    } else if (botonPulsado === botonRojo) {
+        botonPulsado.className += 'activoRojo';
+        let audio = document.getElementById('audioRojo');
+        audio.play();
+    } else if (botonPulsado === botonAmarillo) {
+        botonPulsado.className += 'activoAmarillo';
+        let audio = document.getElementById('audioAmarillo');
+        audio.play();
+    } else if (botonPulsado === botonAzul) {
+        botonPulsado.className += 'activoAzul';
+        let audio = document.getElementById('audioAzul');
+        audio.play();
+    } else {
+        console.log('Algo ha fallado en la activación del botón');
+    }
+
+    setTimeout(() => {
+        if (botonPulsado === botonVerde) {
+            botonPulsado.className = botonPulsado.className.replace(
+                'activoVerde',
+                ''
+            );
+        } else if (botonPulsado === botonRojo) {
+            botonPulsado.className = botonPulsado.className.replace(
+                'activoRojo',
+                ''
+            );
+        } else if (botonPulsado === botonAmarillo) {
+            botonPulsado.className = botonPulsado.className.replace(
+                'activoAmarillo',
+                ''
+            );
+        } else if (botonPulsado === botonAzul) {
+            botonPulsado.className = botonPulsado.className.replace(
+                'activoAzul',
+                ''
+            );
+        } else {
+            console.log('Algo ha fallado en la desactivación del botón');
+        }
+        },250);
+
     const botonAAdivinar = secuenciaAAdivinar.shift();
     if (botonAAdivinar === botonPulsado) {
         if (secuenciaAAdivinar.length === 0){
