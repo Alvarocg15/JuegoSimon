@@ -8,27 +8,41 @@
 </head>
 <body>
     <aside>
-        <table class="puntuaciones">
-            <thead>
-                <tr>
-                    <th colspan="2">Puntuaciones</th>
-                </tr>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Récord</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>jagfhgfa</td>
-                    <td>14</td>
-                </tr>
-                <tr>
-                    <td>jagfhgfa</td>
-                    <td>9</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="selectDificultad">
+            <h1>Selecciona el nivel de Dificultad</h1>
+            <form>
+                <label for="titulo">Dificultad:</label>
+                <select id="dificultad" name="Dificultad">
+                    <option value="" selected>Elige una dificultad.</option>
+                    <option value="1000">Facil</option>
+                    <option value="500">Normal</option>
+                    <option value="250">Dificil</option>
+                </select>
+            </form>
+            <div class="cajaTabla">
+                <table class="puntuaciones">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Puntuaciones</th>
+                        </tr>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Récord</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>jagfhgfa</td>
+                            <td>14</td>
+                        </tr>
+                        <tr>
+                            <td>jagfhgfa</td>
+                            <td>9</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </aside>
     <main>
         <div class="container">

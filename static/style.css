@@ -5,8 +5,11 @@ body{
 
 aside{
     /* background-color: aqua; */
-    width: 20%;
+    display: flex;
+    width: 30%;
     height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 main{
@@ -14,7 +17,19 @@ main{
     justify-content: center;
     align-items: center;
     /* background-color: blueviolet; */
-    width: 80%;
+    width: 70%;
+}
+
+.selectDificultad{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cajaTabla{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
 }
 
 .container{
@@ -114,7 +129,7 @@ main{
     line-height: 200px;
     text-align: center;
     top: 35%;
-    left: 51%;
+    left: 845px;
     height: 250px;
     width: 250px;
     border-radius: 100%;

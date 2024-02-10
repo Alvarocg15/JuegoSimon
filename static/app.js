@@ -3,6 +3,15 @@ const botonRojo = document.querySelector('.boton-dcha-sup');
 const botonAmarillo = document.querySelector('.boton-izq-inf');
 const botonAzul = document.querySelector('.boton-dcha-inf');
 
+var select = document.getElementById('dificultad');
+var velocidad;
+
+select.addEventListener('change',
+  function(){
+    var selectedOption = this.options[select.selectedIndex];
+    console.log(selectedOption.value + ': ' + selectedOption.text);
+    velocidad = selectedOption.value;
+  });
 
 const getBotonAleatorio = () => {
     const botones = [
@@ -60,7 +69,7 @@ const flash = boton => {
             setTimeout(() => {
                 resolve();
             },250);
-        }, 1000);
+        }, velocidad);
     });
 };
 
@@ -79,7 +88,7 @@ const botonPulsado = botonPulsado => {
             marcador++;
         } 
     } else {
-        alert('¡¡¡Has Perdido!!! \nTu resultado ha sido:'+ marcador);
+        confirm('¡¡¡Has Perdido!!! \nTu resultado ha sido:'+ marcador);
         // secuencia.length = 0;
     }
 };
@@ -93,5 +102,12 @@ const empiezaRonda = async () => {
 };
 
 const empiezaJuego = async () => {
-    empiezaRonda();
+    if (velocidad === undefined){
+        alert("ERROR. Selecciona una dificultad antes de empezar a jugar.")
+    } else {
+        empiezaRonda();
+        console.log(velocidad);
+    }
+    console.log(dificultad);
+    console.log(velocidad);
 }
