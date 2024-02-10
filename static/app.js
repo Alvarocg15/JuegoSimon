@@ -2,6 +2,7 @@ const botonVerde = document.querySelector('.boton-izq-sup');
 const botonRojo = document.querySelector('.boton-dcha-sup');
 const botonAmarillo = document.querySelector('.boton-izq-inf');
 const botonAzul = document.querySelector('.boton-dcha-inf');
+const tablaPuntuacion = document.getElementById('modalPuntuaciones');
 
 var select = document.getElementById('dificultad');
 var velocidad;
@@ -142,7 +143,20 @@ const botonPulsado = botonPulsado => {
             marcador++;
         } 
     } else {
-        confirm('¡¡¡Has Perdido!!! \nTu resultado ha sido:'+ marcador);
+        let nombre;
+        do {
+            nombre =prompt('¡¡¡Has Perdido!!! \nTu resultado ha sido: '+ marcador+
+            "\nIntroduce tus iniciales para guardar tu puntuación. (3 letras)");
+            if (!/^[a-zA-Z]*$/g.test(nombre)) {
+                nombre = "";
+            } else {
+                nombre = nombre.toUpperCase();
+                abrirPuntuaciones();
+                console.log(nombre);
+            }
+        }while (nombre.length!=3);
+        
+
         // secuencia.length = 0;
     }
 };
@@ -165,3 +179,13 @@ const empiezaJuego = async () => {
     console.log(dificultad);
     console.log(velocidad);
 }
+
+const abrirPuntuaciones = () => {
+    tablaPuntuacion.style.display = "block";
+}
+
+window.onclick = function(event) {
+    if (event.target == tablaPuntuacion) {
+        tablaPuntuacion.style.display = "none";
+    }
+  }

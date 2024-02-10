@@ -14,7 +14,7 @@
     <aside>
         <div class="selectDificultad">
             <h1>Selecciona el nivel de Dificultad</h1>
-            <form>
+            <form style="padding-bottom: 20px;">
                 <label for="titulo">Dificultad:</label>
                 <select id="dificultad" name="Dificultad">
                     <option value="" disabled selected>Elige una dificultad.</option>
@@ -23,7 +23,8 @@
                     <option value="250">Dificil</option>
                 </select>
             </form>
-            <div class="cajaTabla">
+            <button onclick="abrirPuntuaciones()">Abrir Puntuaciones</button>
+            <div id="modalPuntuaciones" class="cajaTabla">
                 <table class="puntuaciones">
                     <thead>
                         <tr>
