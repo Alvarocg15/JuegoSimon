@@ -159,11 +159,7 @@ const botonPulsado = botonPulsado => {
         registro+={name: nombre, puntos: marcador};
         guardarDatosLocal(nombre,marcador);
         abrirPuntuaciones();
-        console.log(nombre);
         localStorage.getItem('registro');
-        
-
-        // secuencia.length = 0;
     }
 };
  
@@ -180,10 +176,7 @@ const empiezaJuego = async () => {
         alert("ERROR. Selecciona una dificultad antes de empezar a jugar.")
     } else {
         empiezaRonda();
-        console.log(velocidad);
     }
-    console.log(dificultad);
-    console.log(velocidad);
 }
 
 const abrirPuntuaciones = () => {

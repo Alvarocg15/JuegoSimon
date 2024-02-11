@@ -6,7 +6,6 @@
     }
     
     aside{
-        /* background-color: aqua; */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -141,7 +140,6 @@
     }
     
     aside{
-        /* background-color: aqua; */
         display: flex;
         width: 30%;
         height: 100vh;
@@ -153,7 +151,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        /* background-color: blueviolet; */
         width: 70%;
     }
     
@@ -278,7 +275,6 @@
     }
     
     aside{
-        /* background-color: aqua; */
         display: flex;
         width: 30%;
         height: 100vh;
@@ -290,7 +286,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        /* background-color: blueviolet; */
         width: 70%;
     }
     
@@ -407,10 +402,6 @@
         font-size: larger;
     }
 }
-
-/* @media (min-width: 896px){ */
-
-
 
 /* AQUI ESTÁ LA SECCION DE LOS BOTONES CUANDO SE ACTIVAN */
 
