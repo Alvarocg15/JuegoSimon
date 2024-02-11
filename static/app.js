@@ -154,13 +154,13 @@ const botonPulsado = botonPulsado => {
                 nombre = "";
             } else {
                 nombre = nombre.toUpperCase();
-                registro+={name: nombre, puntos: marcador};
-                guardarDatosLocal(nombre,marcador);
-                abrirPuntuaciones();
-                console.log(nombre);
-                localStorage.getItem('registro');
             }
         }while (nombre.length!=3);
+        registro+={name: nombre, puntos: marcador};
+        guardarDatosLocal(nombre,marcador);
+        abrirPuntuaciones();
+        console.log(nombre);
+        localStorage.getItem('registro');
         
 
         // secuencia.length = 0;
