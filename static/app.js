@@ -9,10 +9,11 @@ var select = document.getElementById('dificultad');
 var velocidad;
 
 var registro = {};
+var selectedOption;
 
 select.addEventListener('change',
   function(){
-    var selectedOption = this.options[select.selectedIndex];
+    selectedOption = this.options[select.selectedIndex];
     console.log(selectedOption.value + ': ' + selectedOption.text);
     velocidad = selectedOption.value;
   });
@@ -157,7 +158,7 @@ const botonPulsado = botonPulsado => {
             }
         }while (nombre.length!=3);
         registro+={name: nombre, puntos: marcador};
-        guardarDatosLocal(nombre,marcador);
+        guardarDatosLocal(nombre,marcador,selectedOption.text);
         abrirPuntuaciones();
         localStorage.getItem('registro');
     }
@@ -189,9 +190,9 @@ window.onclick = function(event) {
     }
 }
 
-const guardarDatosLocal = (iniciales, puntos) => {
+const guardarDatosLocal = (iniciales, puntos, dificultad) => {
     let datosGuardados = JSON.parse(localStorage.getItem('datos')) || [];
-    datosGuardados.push({ iniciales, puntos});
+    datosGuardados.push({ iniciales, puntos, dificultad});
     localStorage.setItem('datos', JSON.stringify(datosGuardados));
     actualizarTablas();
 }
@@ -207,9 +208,11 @@ const actualizarTablas = () => {
         let fila = cuerpoTabla.insertRow();
         let celdaIniciales = fila.insertCell(0);
         let celdaPuntos = fila.insertCell(1);
+        let celdaDificultad = fila.insertCell(2);
 
         celdaIniciales.innerHTML = dato.iniciales;
         celdaPuntos.innerHTML = dato.puntos;
+        celdaDificultad.innerHTML = dato.dificultad;
     });
 }
 window.onload = function () {
