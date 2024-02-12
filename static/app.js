@@ -28,10 +28,10 @@ const getBotonAleatorio = () => {
     return botones[parseInt(Math.random() * botones.length)];
 }
 
-const secuencia = [
+var secuencia = [
     getBotonAleatorio()
 ];
-let secuenciaAAdivinar = [...secuencia];
+var secuenciaAAdivinar = [...secuencia];
 
 const flash = boton => {
     return new Promise((resolve) => {
@@ -87,7 +87,7 @@ const flash = boton => {
 };
 
 let juega = false;
-let marcador = 0;
+var marcador = 0;
 const botonPulsado = botonPulsado => {
     if(!juega) return;
     if (botonPulsado === botonVerde) {
@@ -165,6 +165,7 @@ const botonPulsado = botonPulsado => {
 };
  
 const empiezaRonda = async () => {
+    document.getElementById('points').innerText = marcador;
     juega = false;
     for (const boton of secuencia) {
         await flash(boton);

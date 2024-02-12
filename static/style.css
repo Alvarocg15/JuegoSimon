@@ -130,6 +130,21 @@
         cursor: pointer;
         font-size: larger;
     }
+
+    #points{
+        position: absolute;
+        background: black;
+        color: white;
+        font-family: courier;
+        font-size: 20px;
+        height: 30px;
+        width: 50px;
+        margin-left: 38px;
+        margin-top: -39px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 30px;
+    }
 }
 
 
@@ -266,6 +281,20 @@
         cursor: pointer;
         font-size: larger;
     }
+
+    #points{
+        position: absolute;
+        background: black;
+        color: white;
+        font-family: courier;
+        font-size: 20px;
+        height: 30px;
+        width: 50px;
+        margin-left: 38px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 30px;
+    }
 }
 
 @media (min-width: 1024px){
@@ -400,6 +429,24 @@
         border: 10px solid black;
         cursor: pointer;
         font-size: larger;
+        p{
+            height: 100px;
+        }
+    }
+
+    #points{
+        position: absolute;
+        background: black;
+        color: white;
+        font-family: courier;
+        font-size: 20px;
+        height: 30px;
+        width: 50px;
+        margin-left: 99px;
+        margin-top: 30px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 30px;
     }
 }
 
